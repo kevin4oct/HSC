@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dark_grey">#8F8F8F</color>
+
+    <color name="text_title_color">#612700</color>
+    <color name="text_meum_color">#DC944A</color>
+    <color name="bg_btn_controler">#FFD4A3</color>
+    <color name="textcolor_dark">#B74708</color>
+    <color name="textcolor_light">#9A5206</color>
+    <color name="bg_selected">#d9610d</color>
+    <color name="gray_light">#ececec</color>
+    <color name="gray_dark">#AAAAAA</color>
+    <color name="textcolor_unselected">#662801</color>
+    <color name="viewfinder_mask">#60000000</color>
+
+    <color name="black">#000000</color>
+    <color name="mask">#B2000000</color>
+
+    <color name="media_controller_bg">#E3A408</color>
+    <color name="media_controller_seekbar_bg">#646464</color>
+
+    <color name="seekbar_start_color">#2FDC9D</color>
+    <color name="seekbar_end_color">#3B3F45</color>
+    <color name="tv_detail_container">#7A3901</color>
+</resources>

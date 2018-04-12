@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">畅悦客户端</string>
+    <string name="app_name_cn">畅阅数字借阅机</string>
+    <string name="recommend">推荐列表</string>
+    <string name="success">成功！</string>
+    <string name="error">失败！</string>
+    <string name="sdcarderror">存储空间发生错误。。</string>
+    <string name="press_exit">再按一次退出程序</string>
+
+    <string-array name="book_class">
+        <item>推荐列表</item>
+        <item>马列主义</item>
+        <item>哲学宗教</item>
+        <item>社会科学总论</item>
+        <item>政治法律</item>
+        <item>军事</item>
+        <item>经济</item>
+        <item>文化教育科学体育</item>
+        <item>语言文字</item>
+        <item>文学</item>
+        <item>艺术</item>
+        <item>历史地理</item>
+        <item>自然科学总论</item>
+        <item>数理科学和化学</item>
+        <item>天文学地球科学</item>
+        <item>生物科学</item>
+        <item>医药卫生</item>
+        <item>农业科学</item>
+        <item>工业技术</item>
+        <item>交通运输</item>
+        <item>航空航天</item>
+        <item>环境科学安全科学</item>
+        <item>综合性图书</item>
+    </string-array>
+
+</resources>

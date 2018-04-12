@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--&lt;!&ndash;分享按钮&ndash;&gt;-->
+    <!--<ImageView-->
+    <!--android:id="@+id/teach_movie_detail_header_share"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="55dp"-->
+    <!--android:layout_marginEnd="15dp"-->
+    <!--android:src="@mipmap/ic_launcher_round"-->
+    <!--android:visibility="gone"/>-->
+
+    <!--&lt;!&ndash;关闭按钮&ndash;&gt;-->
+    <!--<ImageView-->
+    <!--android:id="@+id/teach_movie_detail_header_back"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="55dp"-->
+    <!--android:layout_gravity="right"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:padding="10dp"-->
+    <!--android:src="@mipmap/btn_close_orange" />-->
+
+    <!--控制条-->
+    <FrameLayout
+        android:id="@+id/teach_movie_detail_header_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/teach_movie_detail_header_video_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <CheckBox
+                android:id="@+id/teach_movie_detail_header_video_play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:button="@mipmap/icon_play" />
+
+            <TextView
+                android:id="@+id/teach_movie_detail_header_video_current"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/gray_dark" />
+
+            <SeekBar
+                android:id="@+id/teach_movie_detail_header_video_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/teach_movie_detail_header_video_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/gray_dark" />
+
+            <CheckBox
+                android:id="@+id/teach_movie_detail_header_video_full_screen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:button="@mipmap/ic_launcher_round" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--加载进度条-->
+    <ProgressBar
+        android:id="@+id/teach_movie_detail_header_video_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>
+

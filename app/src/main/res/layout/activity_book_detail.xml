@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_book_detail"
+    tools:context=".ui.book.view.BookDetailActivity">
+
+    <!--图书信息-->
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/rl_bookinfo_bookdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="120dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="160dp">
+
+        <!--封面-->
+        <RelativeLayout
+            android:id="@+id/rl_cover_bookdetail"
+            android:layout_width="300dp"
+            android:layout_height="400dp">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:src="@mipmap/bg_item_resource" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_cover_bookdetail"
+                android:layout_width="224dp"
+                android:layout_height="315dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="39dp"
+                app:actualImageScaleType="fitXY"
+                app:placeholderImage="@mipmap/place"
+                app:placeholderImageScaleType="fitXY"
+                app:progressBarAutoRotateInterval="1000"
+                app:progressBarImage="@mipmap/loading"
+                app:progressBarImageScaleType="centerInside" />
+        </RelativeLayout>
+
+        <!--图书名称-->
+        <TextView
+            android:id="@+id/tv_bookname_bookdetail"
+            style="@style/tv_detail"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/rl_cover_bookdetail"
+            android:lines="2"
+            android:text="图书名称"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!--图书作者-->
+        <TextView
+            android:id="@+id/tv_author_bookdetail"
+            style="@style/tv_detail"
+            android:layout_alignStart="@+id/tv_bookname_bookdetail"
+            android:layout_below="@+id/tv_bookname_bookdetail"
+            android:layout_marginTop="20dp"
+            android:text="图书作者"
+            android:textColor="#7A3901"
+            android:textSize="26sp" />
+
+        <!--图书出版社-->
+        <TextView
+            android:id="@+id/tv_publish_bookdetail"
+            style="@style/tv_detail"
+            android:layout_alignStart="@+id/tv_bookname_bookdetail"
+            android:layout_below="@+id/tv_author_bookdetail"
+            android:layout_marginTop="20dp"
+            android:text="出版社"
+            android:textColor="#7A3901"
+            android:textSize="26sp" />
+
+        <!--图书价格-->
+        <TextView
+            android:id="@+id/price_bookdetail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/tv_bookname_bookdetail"
+            android:layout_below="@+id/tv_publish_bookdetail"
+            android:layout_marginTop="20dp"
+            android:text="价格：" />
+
+        <TextView
+            android:id="@+id/tv_price_bookdetail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/price_bookdetail"
+            android:layout_toEndOf="@id/price_bookdetail"
+            android:text="图书价格"
+            android:textColor="#7A3901" />
+
+        <!--图书更新日期-->
+        <TextView
+            android:id="@+id/pubdate_bookdetail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/tv_bookname_bookdetail"
+            android:layout_below="@+id/tv_price_bookdetail"
+            android:layout_marginTop="20dp"
+            android:text="出版日期：" />
+
+        <TextView
+            android:id="@+id/tv_pubdate_bookdetail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/pubdate_bookdetail"
+            android:layout_toEndOf="@id/pubdate_bookdetail"
+            android:text="更新日期"
+            android:textColor="#7A3901" />
+
+        <!--阅读按钮-->
+        <ImageView
+            android:id="@+id/btn_read_eightread"
+            android:layout_width="175dp"
+            android:layout_height="58dp"
+            android:layout_alignStart="@+id/tv_bookname_bookdetail"
+            android:layout_below="@+id/pubdate_bookdetail"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:onClick="startRead"
+            android:src="@mipmap/btn_startread" />
+        <!--android:foreground="?android:attr/selectableItemBackground"-->
+
+        <!--返回按钮-->
+        <ImageView
+            android:id="@+id/btn_return_eightread"
+            android:layout_width="175dp"
+            android:layout_height="58dp"
+            android:layout_alignTop="@+id/btn_read_eightread"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/btn_read_eightread"
+            android:clickable="true"
+            android:onClick="returnBtnClick"
+            android:src="@mipmap/btn_return" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <!--简介和目录-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_bookinfo_bookdetail"
+        android:layout_marginBottom="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginStart="160dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--图书摘要-->
+            <TextView
+                android:id="@+id/summary_bookdetail"
+                style="@style/tv_detail"
+                android:layout_marginTop="60dp"
+                android:text="【内容简介】"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_summary_bookdetail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/summary_bookdetail"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="摘要..."
+                android:textSize="18sp" />
+
+            <!--目录-->
+            <TextView
+                android:id="@+id/catalogue_bookdetail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/tv_summary_bookdetail"
+                android:layout_marginTop="60dp"
+                android:text="【目录】"
+                android:textSize="22sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_catalogue_bookdetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/catalogue_bookdetail"
+                android:layout_margin="20dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.activity.MainActivity">
+
+    <!--logo-->
+    <ImageView
+        android:id="@+id/iv_logo01_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_title"
+        app:layout_heightPercent="11%" />
+
+    <!--时间显示区域-->
+    <TextClock
+        android:id="@+id/tv_clock_main"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/iv_logo01_main"
+        android:layout_alignParentEnd="true"
+        android:format12Hour="yyyy年MM月dd日\nEEEE  HH:mm"
+        android:format24Hour="yyyy年MM月dd日\nEEEE  HH:mm"
+        android:gravity="center"
+        android:textColor="@color/textcolor_dark"
+        android:textSize="24sp"
+        app:layout_widthPercent="40%" />
+
+    <!--盛放内容的容器-->
+    <FrameLayout
+        android:id="@+id/container_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/iv_logo01_main" />
+
+    <!--绿叶_右-->
+    <ImageView
+        android:id="@+id/iv_leaf_right_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_leaf02"
+        app:layout_heightPercent="4%"
+        app:layout_marginLeftPercent="85%"
+        app:layout_marginTopPercent="12%"
+        app:layout_widthPercent="11%" />
+
+    <!--导航条-->
+    <com.hbth.hsc.widget.NativeControlerView
+        android:id="@+id/navigation_main"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_marginTopPercent="9%" />
+
+    <!--绿叶_左-->
+    <ImageView
+        android:id="@+id/iv_leaf_left_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_leaf01"
+        app:layout_heightPercent="6%"
+        app:layout_marginLeftPercent="3%"
+        app:layout_marginTopPercent="9%"
+        app:layout_widthPercent="13%" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.book.view.EpubReaderActivity">
+
+    <!--目录-->
+    <FrameLayout
+        android:id="@+id/fl_recycler_bookreader"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_chatper"
+        android:paddingEnd="50dp"
+        android:paddingTop="180dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_bookreader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <!--显示章节内容的区域-->
+    <FrameLayout
+        android:id="@+id/fl_webview_bookreader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/fl_recycler_bookreader"
+        android:padding="10dp">
+
+        <!--显示内容区域-->
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/webview_bookread"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/web_bar_bookread"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="80dp" />
+
+        <TextView
+            android:id="@+id/tv_hint_bookreader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+    </FrameLayout>
+
+    <!--返回按钮-->
+    <ImageView
+        android:id="@+id/btn_return_bookreader"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:onClick="returnBtnClick"
+        android:src="@mipmap/btn_close_orange" />
+
+    <ImageView
+        android:id="@+id/iv_showChapter_bookreader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/fl_recycler_bookreader"
+        android:scaleType="fitXY"
+        android:src="@mipmap/btn_hide" />
+
+    <ImageView
+        android:id="@+id/iv_icon_bookreader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/fl_recycler_bookreader"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_left" />
+
+</RelativeLayout>

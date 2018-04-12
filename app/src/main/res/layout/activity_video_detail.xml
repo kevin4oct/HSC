@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_video_detail"
+    tools:context=".ui.video.view.VideoDetailActivity">
+
+    <!--目录以及推荐列表-->
+    <ScrollView
+        android:id="@+id/sv_videodetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginStart="160dp"
+        app:layout_marginTopPercent="30%h">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--视频摘要-->
+            <TextView
+                android:id="@+id/summary_videodetail"
+                style="@style/tv_detail"
+                android:text="【内容简介】"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_summary_videodetail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/summary_videodetail"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="摘要..."
+                android:textColor="@color/tv_detail_container"
+                android:textSize="18sp" />
+
+            <!--推荐-->
+            <TextView
+                android:id="@+id/recommend_videodetail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/tv_summary_videodetail"
+                android:layout_marginTop="60dp"
+                android:text="【推荐】"
+                android:textSize="22sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_recommend_videodetail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/recommend_videodetail"
+                android:layout_margin="20dp" />
+
+            <!--目录-->
+            <TextView
+                android:id="@+id/catalogue_videodetail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/recycler_recommend_videodetail"
+                android:layout_marginTop="60dp"
+                android:text="【目录】"
+                android:textSize="22sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_catalogue_videodetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/catalogue_videodetail"
+                android:layout_margin="20dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <!--视频基本信息-->
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/rl_baseinfo_videodetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:layout_marginRightPercent="2%w"
+        app:layout_marginTopPercent="8%h"
+        app:layout_widthPercent="45%w">
+
+        <!--图书名称-->
+        <TextView
+            android:id="@+id/tv_name_videodetail"
+            style="@style/tv_detail"
+            android:gravity="center"
+            android:lines="2"
+            android:text="视频名称"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!--视频主讲-->
+        <TextView
+            android:id="@+id/tv_author_videodetail"
+            style="@style/tv_detail"
+            android:layout_below="@+id/tv_name_videodetail"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/iv_cover_videodetail"
+            android:text="主讲人"
+            android:textColor="@color/tv_detail_container"
+            android:textSize="26sp" />
+
+        <!--更新时间-->
+        <TextView
+            android:id="@+id/pubdate_videodetail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tv_author_videodetail"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/iv_cover_videodetail"
+            android:text="更新时间：" />
+
+        <TextView
+            android:id="@+id/tv_pubdate_videodetail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/pubdate_videodetail"
+            android:layout_toEndOf="@id/pubdate_videodetail"
+            android:text="更新时间"
+            android:textColor="@color/tv_detail_container" />
+
+        <!--专辑数量-->
+        <TextView
+            android:id="@+id/size_videodetail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tv_pubdate_videodetail"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/iv_cover_videodetail"
+            android:text="专辑数量：" />
+
+        <TextView
+            android:id="@+id/tv_size_videodetail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/size_videodetail"
+            android:layout_toEndOf="@id/size_videodetail"
+            android:text="MM集"
+            android:textColor="@color/tv_detail_container" />
+
+        <!--阅读按钮-->
+        <ImageView
+            android:id="@+id/btn_read_eightread"
+            android:layout_width="175dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/size_videodetail"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/iv_cover_videodetail"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="startRead"
+            android:src="@mipmap/btn_startread" />
+
+        <!--返回按钮-->
+        <ImageView
+            android:id="@+id/btn_return_eightread"
+            android:layout_width="175dp"
+            android:layout_height="58dp"
+            android:layout_alignTop="@+id/btn_read_eightread"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/btn_read_eightread"
+            android:clickable="true"
+            android:onClick="returnBtnClick"
+            android:src="@mipmap/btn_return" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <!--全屏播放时的背景-->
+    <FrameLayout
+        android:id="@+id/fl_bg_videodetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ce000000"
+        android:visibility="gone"/>
+
+    <!--视频播放区域-->
+    <FrameLayout
+        android:id="@+id/fl_videoplay_videodetail"
+        android:layout_width="432dp"
+        android:layout_height="243dp"
+        android:background="@android:color/black"
+        app:layout_marginLeftPercent="9%w"
+        app:layout_marginTopPercent="12%h">
+
+        <com.hbth.hsc.widget.video.CustomVideoView
+            android:id="@+id/videoview_videodetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

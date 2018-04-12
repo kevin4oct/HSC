@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/place"
+    tools:context=".ui.eightpaper.view.EightPaperReadActivity">
+
+    <!--翻页时底层的展示页-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_eightreader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--展示大图区域-->
+    <me.relex.photodraweeview.PhotoDraweeView
+        android:id="@+id/photoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--
+        app:placeholderImage="@mipmap/place"
+        app:placeholderImageScaleType="fitXY"-->
+
+
+    <!--目录区域-->
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/rl_list_eightreader"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_chatper">
+
+        <!--资源名称-->
+        <TextView
+            android:id="@+id/tv_title_eightread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="3"
+            android:paddingStart="20dp"
+            android:text="目录"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_marginTopPercent="8%" />
+
+        <!--目录内容-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_eightread"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_title_eightread" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <!--返回按钮-->
+    <ImageView
+        android:id="@+id/btn_return_eightread"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:onClick="returnBtnClick"
+        android:src="@mipmap/btn_close_orange" />
+
+    <!--展开/隐藏菜单按钮-->
+    <ImageView
+        android:id="@+id/iv_showChapter_eightread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_toEndOf="@+id/rl_list_eightreader"
+        android:scaleType="fitXY"
+        android:src="@mipmap/btn_hide" />
+
+    <!--展开/隐藏菜单按钮指示器-->
+    <ImageView
+        android:id="@+id/iv_icon_eightread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_toEndOf="@+id/rl_list_eightreader"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_left" />
+
+    <!--上一页按钮-->
+    <ImageView
+        android:id="@+id/iv_lastpage_eightreader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/rl_list_eightreader"
+        android:src="@drawable/selector_lastpage"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="7%w" />
+
+    <!--下一页按钮-->
+    <ImageView
+        android:id="@+id/iv_nextpage_eightreader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/selector_nextpage"
+        app:layout_heightPercent="10%h"
+        app:layout_widthPercent="7%w" />
+
+    <!--加载进度条-->
+    <ProgressBar
+        android:id="@+id/progress_eightread"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="80dp"
+        android:indeterminate="true" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>
