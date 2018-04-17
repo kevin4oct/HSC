@@ -6,6 +6,7 @@
     <string name="error">失败！</string>
     <string name="sdcarderror">存储空间发生错误。。</string>
     <string name="press_exit">再按一次退出程序</string>
+    <string name="time_start">00:00</string>
 
     <string-array name="book_class">
         <item>推荐列表</item>

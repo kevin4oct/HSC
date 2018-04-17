@@ -3,7 +3,7 @@ package com.hbth.hsc.bean;
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/4/11.
+ * Created by Kevin on 2018/4/11.
  */
 
 public class Mp3DetailBean {
@@ -315,12 +315,22 @@ public class Mp3DetailBean {
          * url : http://222.223.215.75:8083/mp3/LLF/QDXTH/1.mp3
          * size : null
          * videoLong : null
+         * coverPath:封面
          */
 
         private String name;
         private String url;
-        private Object size;
-        private Object videoLong;
+        private String size;
+        private String videoLong;
+        private String coverPath;
+
+        public String getCoverPath() {
+            return coverPath;
+        }
+
+        public void setCoverPath(String coverPath) {
+            this.coverPath = coverPath;
+        }
 
         public String getName() {
             return name;
@@ -338,19 +348,19 @@ public class Mp3DetailBean {
             this.url = url;
         }
 
-        public Object getSize() {
+        public String getSize() {
             return size;
         }
 
-        public void setSize(Object size) {
+        public void setSize(String size) {
             this.size = size;
         }
 
-        public Object getVideoLong() {
+        public String getVideoLong() {
             return videoLong;
         }
 
-        public void setVideoLong(Object videoLong) {
+        public void setVideoLong(String videoLong) {
             this.videoLong = videoLong;
         }
 

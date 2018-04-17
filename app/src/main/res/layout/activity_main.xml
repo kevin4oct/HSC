@@ -51,7 +51,7 @@
         app:layout_widthPercent="11%" />
 
     <!--导航条-->
-    <com.hbth.hsc.widget.NativeControlerView
+    <com.hbth.hsc.widget.nativecontroler.NativeControlerView
         android:id="@+id/navigation_main"
         android:layout_width="match_parent"
         android:layout_height="100dp"

@@ -20,7 +20,7 @@ import com.hbth.hsc.ui.main.fragment.RssListFragment;
 import com.hbth.hsc.ui.main.fragment.VideoListFragment;
 import com.hbth.hsc.ui.main.fragment.MgzListFragment;
 import com.hbth.hsc.ui.main.fragment.PaperListFragment;
-import com.hbth.hsc.widget.NativeControlerView;
+import com.hbth.hsc.widget.nativecontroler.NativeControlerView;
 import com.hbth.mylibrary.base.BaseActivity;
 import com.hbth.mylibrary.utils.LogUtils;
 import com.hbth.mylibrary.utils.ToastUtil;
@@ -70,6 +70,11 @@ public class MainActivity extends BaseActivity
     protected void initListener() {
         ((NativeControlerView) findViewById(R.id.navigation_main))
                 .setOnNativeControlClickListener(this);
+    }
+
+    @Override
+    protected void initData() {
+
     }
 
     @Override

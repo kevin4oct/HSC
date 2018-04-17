@@ -47,7 +47,8 @@ public abstract class BaseActivity<M extends  BaseModel,P extends BasePresenter>
         }
         this.initPresenter();
         this.initView();
-        initListener();
+        this.initListener();
+        this.initData();
     }
 
     protected void doBeforeSetContentView() {}
@@ -59,6 +60,8 @@ public abstract class BaseActivity<M extends  BaseModel,P extends BasePresenter>
     protected abstract void initView();
 
     protected abstract void initListener();
+
+    protected abstract void initData();
 
     @Override
     protected void onDestroy() {

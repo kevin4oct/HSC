@@ -47,7 +47,9 @@ public class CustomMediacontrol extends FrameLayout
     }
 
     private void initView() {
+
         mHandler = new Handler(this);
+
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.activity_movie_detail_video_control,this,true);
         mCurrentTime = (TextView) findViewById(R.id.teach_movie_detail_header_video_current);

@@ -43,11 +43,13 @@ public class Mp3ClassAdapter extends BaseAdapter<Mp3ListBean.SubjectBean> {
     @Override
     public void setBindHolder(ViewHolder holder, int position, Mp3ListBean.SubjectBean bean) {
         holder.setText(R.id.tv_class_item, bean.getName().trim());
-        //设置文字颜色
+        //设置文字背景
         if (position == selPosition) {
-            holder.setTextColorRes(R.id.tv_class_item, R.color.bg_selected);
+//            holder.setTextColorRes(R.id.tv_class_item, R.color.bg_selected);
+            holder.setBackgroundRes(R.id.tv_class_item, R.drawable.bg_selector);
         } else {
-            holder.setTextColor(R.id.tv_class_item, Color.BLACK);
+            holder.setBackgroundRes(R.id.tv_class_item, 0);
+
         }
     }
 

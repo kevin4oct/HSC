@@ -60,6 +60,7 @@
         <activity android:name=".ui.eightpaper.view.EightPaperReviewActivity" />
         <activity android:name=".ui.video.view.VideoDetailActivity" />
         <activity android:name=".ui.setting.SettingActivity" />
+        <activity android:name=".ui.mp3.view.Mp3DetailActivity" />
     </application>
 
 </manifest>

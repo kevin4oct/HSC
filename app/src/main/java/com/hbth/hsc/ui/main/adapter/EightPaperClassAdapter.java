@@ -39,11 +39,12 @@ public class EightPaperClassAdapter extends BaseAdapter<String> {
     @Override
     public void setBindHolder(ViewHolder holder, int position, String str) {
         holder.setText(R.id.tv_class_item, str.trim());
-        //设置文字颜色
+        //设置文字背景
         if (position == selPosition) {
-            holder.setTextColorRes(R.id.tv_class_item, R.color.bg_selected);
+            holder.setBackgroundRes(R.id.tv_class_item, R.drawable.bg_selector);
         } else {
-            holder.setTextColor(R.id.tv_class_item, Color.BLACK);
+            holder.setBackgroundRes(R.id.tv_class_item, 0);
+
         }
     }
 }

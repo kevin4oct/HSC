@@ -35,7 +35,8 @@ import butterknife.BindView;
  */
 public class VideoDetailActivity
         extends BaseActivity<VideoDetailModel, VideoDetailPresenter>
-        implements VideoDetailContract.View, BaseAdapter.OnItemClickListener, CustomMediacontrol.HandleScreen, View.OnClickListener {
+        implements VideoDetailContract.View, BaseAdapter.OnItemClickListener,
+        CustomMediacontrol.HandleScreen, View.OnClickListener {
 
     @BindView(R.id.fl_videoplay_videodetail)
     FrameLayout flVideoplay;
@@ -92,8 +93,6 @@ public class VideoDetailActivity
     @Override
     protected void initView() {
         //
-        rows = 10;
-        //
         mCustomMediacontrol = new CustomMediacontrol(this);
         mCustomMediacontrol.setVideoView(videoView);
         mCustomMediacontrol.setHandleScreen(this);
@@ -109,8 +108,6 @@ public class VideoDetailActivity
         recyclerRecommend.setLayoutManager(recommendLayout);
         recommendAdapter = new RecommendAdapter(this, recyclerRecommend);
         recyclerRecommend.setAdapter(recommendAdapter);
-        //
-        mPresenter.getVideoDetailRequest();
     }
 
     @Override
@@ -125,6 +122,14 @@ public class VideoDetailActivity
                 return true;
             }
         });
+    }
+
+    @Override
+    protected void initData() {
+        //
+        rows = 10;
+        //
+        mPresenter.getVideoDetailRequest();
     }
 
     public static Intent getMyIntent(Context mContext, String resourceId) {
@@ -225,7 +230,7 @@ public class VideoDetailActivity
         flVideoplay.setLayoutParams(layoutParams);
         //
         flVideoplay.setX(48);
-        flVideoplay.setY(450);
+        flVideoplay.setY(465);
     }
 
     @Override

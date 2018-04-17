@@ -34,7 +34,7 @@
         <item name="android:gravity">left|center_vertical</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:lines">1</item>
+        <item name="android:lineSpacingExtra">10dp</item>
         <item name="android:ellipsize">end</item>
     </style>
 
@@ -68,4 +68,10 @@
         <item name="android:layout_gravity">center_vertical</item>
     </style>
 
+    <!--垂直进度条-->
+    <style name="VerticalVolumeBar" parent="@android:style/Widget.Holo.SeekBar">
+        <item name="android:progressDrawable">@drawable/layer_voice_bar</item>
+        <item name="android:thumb">@mipmap/icon_controler_voice</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>

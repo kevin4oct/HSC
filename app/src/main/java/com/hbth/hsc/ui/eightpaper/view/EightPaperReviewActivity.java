@@ -74,12 +74,11 @@ public class EightPaperReviewActivity
         recyclerClassPastlist.setLayoutManager(classLayout);
         classAdapter = new EightPaperReviewClassAdapter(this, recyclerClassPastlist);
         recyclerClassPastlist.setAdapter(classAdapter);
+        //
         GridLayoutManager containerManager = new GridLayoutManager(this, 3);
         recyclerContainerPastlist.setLayoutManager(containerManager);
         containerAdapter = new EightPaperReviewContainerAdapter(this, recyclerContainerPastlist);
         recyclerContainerPastlist.setAdapter(containerAdapter);
-        //
-        mPresenter.returnEightRootBeanRequest();
 
     }
 
@@ -87,6 +86,12 @@ public class EightPaperReviewActivity
     protected void initListener() {
         classAdapter.setOnItemClickListener(this);
         containerAdapter.setOnItemClickListener(this);
+    }
+
+    @Override
+    protected void initData() {
+        //
+        mPresenter.returnEightRootBeanRequest();
     }
 
     @Override

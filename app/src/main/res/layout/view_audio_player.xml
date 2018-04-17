@@ -1,116 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_audio">
+
+    <!--唱片封面-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_cover_audio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        app:layout_heightPercent="38%w"
+        app:layout_marginLeftPercent="6%w"
+        app:layout_widthPercent="38%w"
+        app:placeholderImage="@mipmap/place"
+        app:placeholderImageScaleType="fitXY"
+        app:roundAsCircle="true"
+        app:roundingBorderWidth="2dp" />
 
     <!--控制区域-->
-    <com.zhy.android.percent.support.PercentRelativeLayout
+    <LinearLayout
         android:id="@+id/controler_mp3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/shape_zero_to_gray"
-        app:layout_heightPercent="20%h">
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/iv_cover_audio"
+        android:orientation="horizontal"
+        app:layout_heightPercent="80%h">
 
-        <!--播放进度文字提示-->
-        <TextView
-            android:id="@+id/tv_progress_mp3"
+        <!--播放进度-->
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="15dp"
-            android:gravity="center"
-            android:text="@string/time_start"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:visibility="gone"
-            app:layout_heightPercent="14%h"
-            app:layout_widthPercent="10%w" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <!--音频时长-->
-        <TextView
-            android:id="@+id/tv_long_mp3"
+            <!--音频时长-->
+            <TextView
+                android:id="@+id/tv_long_mp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="播放进度"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <!--进度条-->
+            <com.hbth.hsc.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/seekbar_progress_mp3"
+                style="@style/VerticalVolumeBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_long_mp3"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <!--音量-->
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:text="@string/time_start"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:visibility="gone"
-            app:layout_heightPercent="14%h"
-            app:layout_widthPercent="10%w" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <!--进度条-->
-        <SeekBar
-            android:id="@+id/seekbar_mp3"
+            <!--音量-->
+            <TextView
+                android:id="@+id/tv_volume_mp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="音量控制"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <!--音量调节-->
+            <com.hbth.hsc.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/seekbar_volume_mp3"
+                style="@style/VerticalVolumeBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_volume_mp3"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:max="100"
+                android:progress="30" />
+        </RelativeLayout>
+
+        <!--按钮区域-->
+        <com.zhy.android.percent.support.PercentRelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tv_progress_mp3"
-            android:layout_toStartOf="@+id/tv_long_mp3"
-            android:visibility="gone" />
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
-        <!--播放按钮-->
-        <ImageView
-            android:id="@+id/iv_play_mp3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:src="@mipmap/icon_play"
-            app:layout_heightPercent="60%h"
-            app:layout_widthPercent="60%h" />
+            <!--关闭按钮-->
+            <ImageView
+                android:id="@+id/btn_close_mp3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/btn_return_metal"
+                app:layout_heightPercent="45%w"
+                app:layout_marginTopPercent="10%h"
+                app:layout_widthPercent="45%w" />
 
-        <!--上一曲-->
-        <ImageView
-            android:id="@+id/iv_last_mp3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:layout_toStartOf="@+id/iv_play_mp3"
-            android:contentDescription="@string/last"
-            android:src="@drawable/selector_last"
-            app:layout_heightPercent="40%h"
-            app:layout_marginRightPercent="4%w"
-            app:layout_widthPercent="40%h" />
+            <!--上一曲-->
+            <ImageView
+                android:id="@+id/iv_last_mp3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/btn_last_metal"
+                app:layout_heightPercent="30%w"
+                app:layout_marginLeftPercent="15%w"
+                app:layout_widthPercent="30%w" />
 
-        <!--下一曲-->
-        <ImageView
-            android:id="@+id/iv_next_mp3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-            android:layout_toEndOf="@+id/iv_play_mp3"
-            android:contentDescription="@string/next"
-            android:src="@drawable/selector_next"
-            app:layout_heightPercent="40%h"
-            app:layout_marginLeftPercent="4%w"
-            app:layout_widthPercent="40%h" />
+            <!--下一曲-->
+            <ImageView
+                android:id="@+id/iv_next_mp3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/btn_next_metal"
+                app:layout_heightPercent="30%w"
+                app:layout_marginRightPercent="15%"
+                app:layout_widthPercent="30%w" />
 
-        <!--播放顺序-->
-        <ImageView
-            android:id="@+id/iv_order_mp3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerVertical="true"
-            android:contentDescription="播放顺序"
-            android:src="@mipmap/icon_order_circular"
-            app:layout_heightPercent="20%h"
-            app:layout_marginLeftPercent="4%w"
-            app:layout_widthPercent="20%h" />
+            <!--播放按钮-->
+            <ImageView
+                android:id="@+id/iv_play_mp3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/btn_play_metal"
+                app:layout_heightPercent="40%w"
+                app:layout_marginBottomPercent="10%h"
+                app:layout_widthPercent="40%w" />
 
-        <!--切换播放列表-->
-        <ImageView
-            android:id="@+id/iv_list_mp3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:contentDescription="切换播放列表"
-            android:src="@mipmap/icon_list_unpress"
-            app:layout_heightPercent="20%h"
-            app:layout_marginRightPercent="4%w"
-            app:layout_widthPercent="20%h" />
+        </com.zhy.android.percent.support.PercentRelativeLayout>
 
-    </com.zhy.android.percent.support.PercentRelativeLayout>
-</RelativeLayout>
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

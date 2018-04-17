@@ -103,12 +103,16 @@ public class BookDetailActivity
         recyclerCatalogueBookdetail.setLayoutManager(layout);
         adapter = new BookCatalogueAdapter(this, recyclerCatalogueBookdetail);
         recyclerCatalogueBookdetail.setAdapter(adapter);
-        mPresenter.returnBookDetailRequest();
     }
 
     @Override
     protected void initListener() {
         adapter.setOnItemClickListener(this);
+    }
+
+    @Override
+    protected void initData() {
+        mPresenter.returnBookDetailRequest();
     }
 
     @Override

@@ -42,11 +42,12 @@ public class VideoClassAdapter extends BaseAdapter<VideoListBean.SubjectBean> {
     @Override
     public void setBindHolder(ViewHolder holder, int position, VideoListBean.SubjectBean bean) {
         holder.setText(R.id.tv_class_item, bean.getName().trim());
-        //设置文字颜色
+        //设置文字背景
         if (position == selPosition) {
-            holder.setTextColorRes(R.id.tv_class_item, R.color.bg_selected);
+            holder.setBackgroundRes(R.id.tv_class_item, R.drawable.bg_selector);
         } else {
-            holder.setTextColor(R.id.tv_class_item, Color.BLACK);
+            holder.setBackgroundRes(R.id.tv_class_item, 0);
+
         }
     }
 

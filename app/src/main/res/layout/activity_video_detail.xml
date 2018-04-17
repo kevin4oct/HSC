@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_video_detail"
+    android:background="@mipmap/bg_detail"
     tools:context=".ui.video.view.VideoDetailActivity">
+
+    <!--视频标签-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/sign_videodetail"
+        app:layout_heightPercent="26%w"
+        app:layout_marginLeftPercent="1%w"
+        app:layout_marginTopPercent="1.5%w"
+        app:layout_widthPercent="26%w"  />
 
     <!--目录以及推荐列表-->
     <ScrollView
@@ -167,14 +177,6 @@
 
     </com.zhy.android.percent.support.PercentRelativeLayout>
 
-    <!--全屏播放时的背景-->
-    <FrameLayout
-        android:id="@+id/fl_bg_videodetail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ce000000"
-        android:visibility="gone"/>
-
     <!--视频播放区域-->
     <FrameLayout
         android:id="@+id/fl_videoplay_videodetail"
@@ -189,7 +191,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center" />
-
     </FrameLayout>
+
+    <!--全屏播放时的背景-->
+    <FrameLayout
+        android:id="@+id/fl_bg_videodetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_video_allscreen"
+        android:visibility="gone"/>
 
 </com.zhy.android.percent.support.PercentRelativeLayout>

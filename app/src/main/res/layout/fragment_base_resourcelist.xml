@@ -14,12 +14,19 @@
         android:layout_alignParentBottom="true"
         android:background="@mipmap/bg_navigation">
 
-
-        <Button
+        <TextView
+            style="@style/tv_page"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="跳转"
-            android:onClick="gotoSelectPage"/>
+            android:onClick="gotoSelectPage"
+            android:text="首页" />
+
+        <Button
+            style="@style/tv_page"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="gotoSelectPage"
+            android:text="跳转" />
 
         <TextView
             style="@style/tv_page"
@@ -60,8 +67,14 @@
             android:gravity="center_vertical|start"
             android:text="页" />
 
-    </LinearLayout>
+        <TextView
+            style="@style/tv_page"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="gotoSelectPage"
+            android:text="尾页" />
 
+    </LinearLayout>
 
     <!--分类列表-->
     <android.support.v7.widget.RecyclerView
@@ -72,7 +85,7 @@
         android:background="@mipmap/bg_class"
         android:fadeScrollbars="true"
         android:paddingTop="110dp"
-        app:layout_widthPercent="14%w" />
+        app:layout_widthPercent="16%w" />
 
     <!--内容列表-->
     <android.support.v7.widget.RecyclerView

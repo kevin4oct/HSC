@@ -109,8 +109,6 @@ public class EightPaperReadActivity
         recyclerEightread.setLayoutManager(layoutManager);
         adapter = new EightPaperReaderAdapter(this, recyclerEightread);
         recyclerEightread.setAdapter(adapter);
-        //
-        mPresenter.returnEightReaderBeanRequest();
     }
 
     @Override
@@ -119,6 +117,12 @@ public class EightPaperReadActivity
         ivShowChapter.setOnClickListener(this);
         lastPageBtn.setOnClickListener(this);
         nextPageBtn.setOnClickListener(this);
+    }
+
+    @Override
+    protected void initData() {
+        //
+        mPresenter.returnEightReaderBeanRequest();
     }
 
     public static Intent getMyIntent(Context mContext, String paperId, String dbName, String type) {

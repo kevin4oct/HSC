@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_book_detail"
+    android:background="@mipmap/bg_detail"
     tools:context=".ui.book.view.BookDetailActivity">
+
+    <!--图书标签-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/sign_bookdetail"
+        app:layout_heightPercent="26%w"
+        app:layout_marginLeftPercent="1%w"
+        app:layout_marginTopPercent="1.5%w"
+        app:layout_widthPercent="26%w" />
 
     <!--图书信息-->
     <com.zhy.android.percent.support.PercentRelativeLayout
         android:id="@+id/rl_bookinfo_bookdetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="120dp"
         android:layout_marginStart="120dp"
         android:layout_marginTop="160dp">
 
-        <!--封面-->
-        <RelativeLayout
-            android:id="@+id/rl_cover_bookdetail"
-            android:layout_width="300dp"
-            android:layout_height="400dp">
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                android:src="@mipmap/bg_item_resource" />
-
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/iv_cover_bookdetail"
-                android:layout_width="224dp"
-                android:layout_height="315dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="39dp"
-                app:actualImageScaleType="fitXY"
-                app:placeholderImage="@mipmap/place"
-                app:placeholderImageScaleType="fitXY"
-                app:progressBarAutoRotateInterval="1000"
-                app:progressBarImage="@mipmap/loading"
-                app:progressBarImageScaleType="centerInside" />
-        </RelativeLayout>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_cover_bookdetail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:actualImageScaleType="fitXY"
+            app:layout_heightPercent="20%h"
+            app:layout_marginLeftPercent="5%w"
+            app:layout_marginTopPercent="2%h"
+            app:layout_widthPercent="30%w"
+            app:placeholderImage="@mipmap/place"
+            app:placeholderImageScaleType="fitXY"
+            app:progressBarAutoRotateInterval="1000"
+            app:progressBarImage="@mipmap/loading"
+            app:progressBarImageScaleType="centerInside" />
 
         <!--图书名称-->
         <TextView
             android:id="@+id/tv_bookname_bookdetail"
             style="@style/tv_detail"
-            android:layout_marginStart="60dp"
-            android:layout_toEndOf="@id/rl_cover_bookdetail"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="62dp"
             android:lines="2"
             android:text="图书名称"
             android:textSize="32sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_widthPercent="55%w" />
 
         <!--图书作者-->
         <TextView
@@ -165,6 +167,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:text="摘要..."
+                android:textColor="@color/tv_detail_container"
                 android:textSize="18sp" />
 
             <!--目录-->
@@ -187,4 +190,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

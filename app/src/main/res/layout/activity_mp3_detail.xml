@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_detail"
+    tools:context="com.hbth.hsc.ui.mp3.view.Mp3DetailActivity">
+
+    <!--音频标签-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/sign_mp3detail"
+        app:layout_heightPercent="26%w"
+        app:layout_marginLeftPercent="1%w"
+        app:layout_marginTopPercent="1.5%w"
+        app:layout_widthPercent="26%w" />
+
+    <!--音频播放区域-->
+    <com.hbth.hsc.widget.mp3.AudioPlayerView
+        android:id="@+id/audio_mp3detail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        app:layout_heightPercent="25%h"
+        app:layout_marginTopPercent="10%h"
+        app:layout_widthPercent="84%w" />
+
+    <!--音频信息-->
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/info_mp3detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/audio_mp3detail"
+        app:layout_heightPercent="20%h"
+        app:layout_marginLeftPercent="15%w"
+        app:layout_marginRightPercent="15%w">
+
+        <!--音频名称-->
+        <TextView
+            android:id="@+id/tv_mp3name_mp3detail"
+            style="@style/tv_detail"
+            android:layout_marginTop="60dp"
+            android:lines="1"
+            android:text="音频名称"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="20%h" />
+
+        <!--主讲人-->
+        <TextView
+            android:id="@+id/singer_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/tv_mp3name_mp3detail"
+            android:layout_below="@+id/tv_mp3name_mp3detail"
+            android:text="主讲人:"
+            android:textSize="24sp" />
+
+        <!--主讲人-->
+        <TextView
+            android:id="@+id/tv_singer_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignTop="@+id/singer_mp3detail"
+            android:layout_toEndOf="@+id/singer_mp3detail"
+            android:text="主讲人"
+            android:textColor="#7A3901"
+            android:textSize="24sp" />
+
+        <!--音频时长-->
+        <TextView
+            android:id="@+id/long_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/tv_mp3name_mp3detail"
+            android:layout_below="@+id/tv_singer_mp3detail"
+            android:layout_marginTop="20dp"
+            android:text="音频时长:"
+            android:textSize="24sp" />
+
+        <!--音频时长-->
+        <TextView
+            android:id="@+id/tv_long_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignTop="@+id/long_mp3detail"
+            android:layout_toEndOf="@+id/long_mp3detail"
+            android:text="音频时长"
+            android:textColor="#7A3901"
+            android:textSize="26sp" />
+
+        <!--音频大小-->
+        <TextView
+            android:id="@+id/size_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tv_singer_mp3detail"
+            android:layout_marginTop="20dp"
+            android:text="音频大小:"
+            android:textSize="24sp"
+            app:layout_marginLeftPercent="50%w" />
+
+        <!--音频大小-->
+        <TextView
+            android:id="@+id/tv_size_mp3detail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/size_mp3detail"
+            android:layout_toEndOf="@+id/size_mp3detail"
+            android:text="音频大小"
+            android:textColor="#7A3901"
+            android:textSize="24sp" />
+
+        <!--专辑名称-->
+        <TextView
+            android:id="@+id/parentname_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_alignStart="@+id/tv_mp3name_mp3detail"
+            android:layout_below="@+id/size_mp3detail"
+            android:layout_marginTop="20dp"
+            android:text="专辑名称:" />
+
+        <!--专辑名称-->
+        <TextView
+            android:id="@+id/tv_parentname_mp3detail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/parentname_mp3detail"
+            android:layout_toEndOf="@id/parentname_mp3detail"
+            android:text="专辑名称"
+            android:textColor="#7A3901" />
+
+        <!--专辑集数-->
+        <TextView
+            android:id="@+id/childs_mp3detail"
+            style="@style/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/size_mp3detail"
+            android:layout_marginTop="20dp"
+            android:text="专辑集数:"
+            app:layout_marginLeftPercent="50%w" />
+
+        <TextView
+            android:id="@+id/tv_childs_mp3detail"
+            style="@style/tv_detail"
+            android:layout_alignTop="@+id/childs_mp3detail"
+            android:layout_toEndOf="@id/childs_mp3detail"
+            android:text="专辑集数"
+            android:textColor="#7A3901" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <!--详情-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignEnd="@+id/info_mp3detail"
+        android:layout_alignStart="@+id/info_mp3detail"
+        android:layout_below="@+id/info_mp3detail"
+        app:layout_marginBottomPercent="8%h">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--摘要-->
+            <TextView
+                android:id="@+id/summary_mp3detail"
+                style="@style/tv_detail"
+                android:text="【内容简介】"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_summary_mp3detail"
+                style="@style/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/summary_mp3detail"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="12"
+                android:text="摘要..."
+                android:textColor="@color/tv_detail_container" />
+
+            <!--目录-->
+            <TextView
+                android:id="@+id/catalogue_mp3detail"
+                style="@style/tv_detail"
+                android:layout_below="@+id/tv_summary_mp3detail"
+                android:layout_marginTop="60dp"
+                android:text="【播放目录】"
+                android:textSize="22sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_catalogue_mp3detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/catalogue_mp3detail"
+                android:layout_margin="20dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

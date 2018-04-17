@@ -85,10 +85,7 @@ public class EpubReaderActivity extends BaseActivity
         recyclerBookreader.setLayoutManager(layout);
         adapter = new BookCatalogueAdapter(this, recyclerBookreader);
         recyclerBookreader.setAdapter(adapter);
-        adapter.selPosition = index;//设置选中的目录条目
-        List<BookDetailBean.UrlBean> urlList = bean.getUrl();
-        pageCount = urlList.size();//设置总的页数
-        adapter.refreshData(urlList);//刷新数据
+
         recyclerBookreader.scrollToPosition(index);//滑动到指定位置
         //
         webView = (WebView) findViewById(R.id.webview_bookread);
@@ -138,8 +135,7 @@ public class EpubReaderActivity extends BaseActivity
             }
 
         });
-        BookDetailBean.UrlBean urlBean = (BookDetailBean.UrlBean) urlList.get(index);
-        webView.loadUrl(urlBean.getUrl());
+
     }
 
     @Override
@@ -147,6 +143,17 @@ public class EpubReaderActivity extends BaseActivity
         adapter.setOnItemClickListener(this);
         ivShowChapterBookreader.setOnClickListener(this);
         webView.setOnTouchListener(this);
+    }
+
+    @Override
+    protected void initData() {
+        adapter.selPosition = index;//设置选中的目录条目
+        List<BookDetailBean.UrlBean> urlList = bean.getUrl();
+        pageCount = urlList.size();//设置总的页数
+        adapter.refreshData(urlList);//刷新数据
+
+        BookDetailBean.UrlBean urlBean = (BookDetailBean.UrlBean) urlList.get(index);
+        webView.loadUrl(urlBean.getUrl());
     }
 
     public static Intent getMyIntent(Context context, BookDetailBean bean, int index) {

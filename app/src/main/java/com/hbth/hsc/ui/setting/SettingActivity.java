@@ -29,6 +29,11 @@ public class SettingActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
 
     /**
      * 设置完成按钮点击事件

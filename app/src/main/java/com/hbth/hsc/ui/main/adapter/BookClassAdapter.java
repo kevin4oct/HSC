@@ -1,7 +1,6 @@
 package com.hbth.hsc.ui.main.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 
 import com.hbth.hsc.R;
@@ -42,11 +41,11 @@ public class BookClassAdapter extends BaseAdapter<BookListBean.SubjectBean> {
     @Override
     public void setBindHolder(ViewHolder holder, int position, BookListBean.SubjectBean bean) {
         holder.setText(R.id.tv_class_item, bean.getName().trim());
-        //设置文字颜色
+        //设置文字背景
         if (position == selPosition) {
-            holder.setTextColorRes(R.id.tv_class_item, R.color.bg_selected);
+            holder.setBackgroundRes(R.id.tv_class_item, R.drawable.bg_selector);
         } else {
-            holder.setTextColor(R.id.tv_class_item, Color.BLACK);
+            holder.setBackgroundRes(R.id.tv_class_item, 0);
         }
     }
 }

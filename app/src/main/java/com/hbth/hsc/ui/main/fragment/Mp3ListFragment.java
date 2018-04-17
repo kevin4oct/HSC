@@ -10,7 +10,7 @@ import com.hbth.hsc.ui.main.adapter.Mp3ListAdapter;
 import com.hbth.hsc.ui.main.contract.Mp3ListContract;
 import com.hbth.hsc.ui.main.model.Mp3ListModel;
 import com.hbth.hsc.ui.main.presenter.Mp3ListPresenter;
-import com.hbth.hsc.utils.ShareParameterUtils;
+import com.hbth.hsc.ui.mp3.view.Mp3DetailActivity;
 import com.hbth.mylibrary.ui.recyclerview.BaseAdapter;
 import com.hbth.mylibrary.utils.LogUtils;
 
@@ -114,7 +114,8 @@ public class Mp3ListFragment
                 break;
             case R.id.recycler_container_resourcelist://内容条目点击事件
                 Mp3ListBean.ResourceBean resourceBean = (Mp3ListBean.ResourceBean) bean;
-                // TODO: 2018/4/11
+                String resourceId = String.valueOf(resourceBean.getResourceId());
+                startActivity(Mp3DetailActivity.getMyIntent(getActivity(), resourceId));
                 break;
         }
     }

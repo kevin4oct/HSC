@@ -32,6 +32,11 @@ public class SplashActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     public static Intent getMyIntent(Context mContext) {
         return new Intent(mContext, SplashActivity.class);
     }
